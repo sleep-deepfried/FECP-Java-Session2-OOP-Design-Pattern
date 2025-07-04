@@ -7,6 +7,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         BookRideHandler bookRideHandler = new BookRideHandler();
+        FareCalculatorHandler fareCalculatorHandler = new FareCalculatorHandler(bookRideHandler.getBookingService());
 
         int choice;
         while (true){
@@ -26,7 +27,7 @@ public class Main {
                     bookRideHandler.startBooking();
                     break;
                 case 2:
-                    System.out.println("Calculate Fare");
+                    fareCalculatorHandler.startFareCalculation();
                     break;
                 case 3:
                     System.out.println("View Receipt");

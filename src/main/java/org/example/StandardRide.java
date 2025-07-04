@@ -10,4 +10,9 @@ public class StandardRide extends Ride {
     public String getType() {
         return "Standard";
     }
+
+    @Override
+    public double getBaseFare() {
+        return 30.0;
+    }
 }
