@@ -18,4 +18,6 @@ public abstract class Ride {
     }
 
     public abstract String getType();
+
+    public abstract double getBaseFare();
 }

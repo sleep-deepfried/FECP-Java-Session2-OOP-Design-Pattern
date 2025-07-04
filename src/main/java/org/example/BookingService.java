@@ -15,5 +15,12 @@ public class BookingService {
     public List<Ride> getBookedRides() {
         return bookedRides;
     }
+
+    public Ride getLastBookedRide() {
+        if (bookedRides.isEmpty()) {
+            return null;
+        }
+        return bookedRides.getLast();
+    }
 }
 

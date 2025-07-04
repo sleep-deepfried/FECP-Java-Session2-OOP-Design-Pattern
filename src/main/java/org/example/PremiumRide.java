@@ -10,5 +10,10 @@ public class PremiumRide extends Ride {
     public String getType() {
         return "Premium";
     }
+
+    @Override
+    public double getBaseFare() {
+        return 50.0;
+    }
 }
 
