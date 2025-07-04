@@ -1,4 +1,5 @@
 package org.example;
 
-public class FareStrategy {
+public interface FareStrategy {
+    FareBreakdown calculateFare (Ride ride);
 }
