@@ -9,8 +9,6 @@ public abstract class Ride {
         this.duration = duration;
     }
 
-    public abstract double calculateFare();
-
     public double getDistance() {
         return distance;
     }
