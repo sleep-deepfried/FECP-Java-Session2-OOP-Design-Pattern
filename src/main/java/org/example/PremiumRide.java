@@ -7,11 +7,6 @@ public class PremiumRide extends Ride {
     }
 
     @Override
-    public double calculateFare() {
-        return 60 + (15 * distance) + (3 * duration);
-    }
-
-    @Override
     public String getType() {
         return "Premium";
     }
