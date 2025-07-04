@@ -8,6 +8,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         BookRideHandler bookRideHandler = new BookRideHandler();
         FareCalculatorHandler fareCalculatorHandler = new FareCalculatorHandler(bookRideHandler.getBookingService());
+        ReceiptPrinter receiptPrinter;
+        double currentTotalFare = -1;
+
 
         int choice;
         while (true){
@@ -27,10 +30,11 @@ public class Main {
                     bookRideHandler.startBooking();
                     break;
                 case 2:
-                    fareCalculatorHandler.startFareCalculation();
+                    currentTotalFare = fareCalculatorHandler.startFareCalculation();
                     break;
                 case 3:
-                    System.out.println("View Receipt");
+                    receiptPrinter = new ReceiptPrinter(bookRideHandler.getBookingService().getLastBookedRide(), currentTotalFare);
+                    receiptPrinter.printCurrentReceipt();;
                     break;
                 case 4:
                     System.out.println("Thank you for riding with us!");
@@ -38,6 +42,7 @@ public class Main {
                 default:
                     System.out.println("Enter Valid Choice (1 - 4)");
             }
+            System.out.println();
         }
     }
 }

@@ -9,13 +9,13 @@ public class FareCalculatorHandler {
         this.bookingService = bookingService;
     }
 
-    public void startFareCalculation() {
+    public double startFareCalculation() {
         Scanner scanner = new Scanner(System.in);
 
         Ride ride = bookingService.getLastBookedRide();
         if (ride == null) {
             System.out.println("No ride booked yet.");
-            return;
+            return -1;
         }
 
         System.out.print("Fare Type (normal/night): ");
@@ -30,7 +30,7 @@ public class FareCalculatorHandler {
             }
         };
 
-        if (strategy == null) return;
+        if (strategy == null) return -1;
 
         FareCalculator calculator = new FareCalculator(strategy);
         FareBreakdown breakdown = calculator.calculateFare(ride);
@@ -43,5 +43,6 @@ public class FareCalculatorHandler {
             System.out.printf("Surcharge (Night): %.2f%n", breakdown.surcharge);
         }
         System.out.printf("Total Fare: %.2f%n", breakdown.total);
+        return breakdown.total;
     }
 }
