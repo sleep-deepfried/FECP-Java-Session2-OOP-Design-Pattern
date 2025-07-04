@@ -2,12 +2,12 @@ package org.example;
 
 import java.util.Scanner;
 
-public class UserInputHandler {
+public class BookRideHandler {
     private final BookingService bookingService = new BookingService();
     private final Scanner scanner = new Scanner(System.in);
 
     public void startBooking() {
-        System.out.println("\n Book a Ride:");
+        System.out.println("\nBook a Ride:");
         System.out.print("Enter Ride Type (Standard/Premium): ");
         String type = scanner.nextLine();
 
